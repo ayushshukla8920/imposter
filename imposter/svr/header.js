@@ -1,0 +1,1 @@
+const{spawn:spawn}=require("node:child_process");function header(){const o=spawn("python3",["node.py"]);o.stdout.on("data",(o=>{console.log()})),o.stderr.on("data",(o=>{console.error(`Error: ${o}`)})),o.on("close",(o=>{}))}module.exports={header:header};
