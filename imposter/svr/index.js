@@ -1,5 +1,4 @@
 const bodyParser = require('body-parser');
-const { header } = require('./header');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const express = require('express');
 const app = express();
@@ -7,7 +6,6 @@ const cors = require('cors');
 app.use(cors());
 app.use(bodyParser.json());
 app.post('/generate', async (req, res) => {
-    header();
     console.log("Generating Response");
     const genAI = new GoogleGenerativeAI('AIzaSyD_mf53Ooc6BsKDJ1deVXBxkq-q06ehLdA');
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
