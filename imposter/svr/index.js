@@ -1,14 +1,8 @@
 const bodyParser = require('body-parser');
 const { header } = require('./header');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-var fs = require('fs');
-var https = require('https');
-var privateKey  = fs.readFileSync('sslcert/key.pem', 'utf8');
-var certificate = fs.readFileSync('sslcert/cert.pem', 'utf8');
-var credentials = {key: privateKey, cert: certificate};
 const express = require('express');
 const app = express();
-const app2 = express();
 const cors = require('cors');
 app.use(cors());
 app.use(bodyParser.json());
