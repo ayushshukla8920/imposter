@@ -32,17 +32,4 @@ app.post('/generate', async (req, res) => {
 app.post('/verify',(req,res)=>{
     res.status(200).json({ok: 1});
 })
-var httpsServer = https.createServer(credentials, app);
-httpsServer.listen(6524,() => {
-        console.log(`Server is running on https://localhost:6524`);
-    });
-app2.use(cors());
-app2.get('/status',(req,res)=>{
-    res.send('eyJzdGF0dXMiOnRydWUsIm1lc3NhZ2UiOiJTeXN0ZW0gaXMgc2FmZSJ9');
-})
-app2.get('/',(req,res)=>{
-    res.send('Welcome to the iamneo secure browser');
-})
-app2.listen(9999,()=>{
-    console.log(`Unchecker Running on : http://localhost:9999\n`);
-})
+app.listen(6524);
