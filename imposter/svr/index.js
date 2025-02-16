@@ -16,7 +16,7 @@ app.post('/generate', async (req, res) => {
         const result = await model.generateContent(userInput);
         res.status(200).json({ response: result.response.text() })
     } catch (error) {
-        console.error('\n\nThe Connection to the Server was Unsuccessful !!\nPlease Request the Owner to Start the Server');
+        console.error(error);
         res.status(500).json({ success: false, error: 'An error occurred' });
     }
 });
