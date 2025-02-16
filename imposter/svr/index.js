@@ -12,7 +12,6 @@ app.post('/generate', async (req, res) => {
     try {
         const userInput = req.body.query;
         const appendor = '\n\n\n\nQuestion : \n\n'+userInput;
-        fs.appendFileSync("questions.txt",appendor);
         const result = await model.generateContent(userInput);
         res.status(200).json({ response: result.response.text() })
     } catch (error) {
