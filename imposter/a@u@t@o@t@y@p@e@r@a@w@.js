@@ -17,7 +17,7 @@ async function solveQuestion() {
     }
     query += "\n\nContext:\n" + context;
     try {
-        const apiKey = "AIzaSyD_mf53Ooc6BsKDJ1deVXBxkq-q06ehLdA";
+        const apiKey = "X-api-key";
         let res = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + apiKey, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
